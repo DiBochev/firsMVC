@@ -10,15 +10,17 @@
 function startTime() {
     var today=new Date();
     var date = today.getDate();
-var month = today.getMonth()+1;
-var year = today.getYear() +1900;
+	var month = today.getMonth()+1;
+	var year = today.getYear() +1900;
     var h=today.getHours();
     var m=today.getMinutes();
     var s=today.getSeconds();
     m = checkTime(m);
     s = checkTime(s);
     document.getElementById('txt').innerHTML = date+'/'+ month + '/'+year  + '  '+'   ' +h+":"+m+":"+s;
-    var t = setTimeout(function(){startTime()},500);
+    var t = setTimeout(
+    	    function(){
+        	    startTime()},1000 );
 }
 
 function checkTime(i) {
